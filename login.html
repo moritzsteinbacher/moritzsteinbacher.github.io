@@ -20,22 +20,25 @@
 <body>
 
 <form onsubmit="return checkPassword()">
+  <p>Bitte Passwort eingeben:</p>
   <input type="password" id="pw" />
   <button type="submit">Einloggen</button>
 </form>
-  
+
 <script>
-  function checkPassword() {
+function checkPassword() {
   const pw = document.getElementById("pw").value.trim();
+
   if (pw === "portfolio2026") {
+    // Speichert Flag im Browser
+    sessionStorage.setItem("loggedIn", "true");
     window.location.href = "index.html";
   } else {
     alert("Falsches Passwort");
   }
   return false;
 }
-
 </script>
-
+  
 </body>
 </html>
