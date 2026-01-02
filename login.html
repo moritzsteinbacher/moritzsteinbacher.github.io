@@ -1,21 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio Zugang</title>
-  <style>
-    body {
-      font-family: Inter, Helvetica, Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    input {
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Portfolio Login</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -28,17 +16,22 @@
 <script>
 function checkPassword() {
   const pw = document.getElementById("pw").value.trim();
-
   if (pw === "portfolio2026") {
     // Speichert Flag im Browser
-    sessionStorage.setItem("loggedIn", "true");
+    localStorage.setItem("loggedIn", "true");
+    // Weiterleitung zu Portfolio
     window.location.href = "index.html";
   } else {
     alert("Falsches Passwort");
   }
   return false;
 }
+
+// Falls jemand die Login-Seite direkt aufruft und schon eingeloggt ist
+if (localStorage.getItem("loggedIn") === "true") {
+  window.location.href = "index.html";
+}
 </script>
-  
+
 </body>
 </html>
