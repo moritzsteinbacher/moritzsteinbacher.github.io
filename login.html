@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Zugang</title>
+  <style>
+    body {
+      font-family: Inter, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<form onsubmit="return checkPassword()">
+  <p>Bitte Passwort eingeben:</p>
+  <input type="password" id="pw" />
+</form>
+
+<script>
+  function checkPassword() {
+    if (document.getElementById("pw").value === "portfolio2026") {
+      window.location.href = "index.html";
+    } else {
+      alert("Falsches Passwort");
+    }
+    return false;
+  }
+</script>
+
+</body>
+</html>
