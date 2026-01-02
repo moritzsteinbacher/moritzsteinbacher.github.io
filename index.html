@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <script>
   // Prüfen, ob Benutzer eingeloggt ist
-  if (sessionStorage.getItem("loggedIn") !== "true") {
-    // Wenn nicht eingeloggt → Login-Seite
+  if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "login.html";
   }
-</script>
+</script> 
 
 <header>
   <h1>Vorname Nachname</h1>
